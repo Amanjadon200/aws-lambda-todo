@@ -10,6 +10,7 @@ provider:
     name: guru
 plugins:
   - serverless-offline
+  - serverless-dotenv-plugin
 functions:
   createTodo:
     handler: index.hello
