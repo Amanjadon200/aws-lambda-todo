@@ -1,0 +1,21 @@
+service: aws-node-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  httpApi:
+    cors: true
+  environment: 
+    name: guru
+plugins:
+  - serverless-offline
+functions:
+  createTodo:
+    handler: index.hello
+    events:
+      - httpApi:
+          path: todos
+          method: post
+          cors: true
+
